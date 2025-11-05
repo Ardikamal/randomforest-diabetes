@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Diabetes - Random Forest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        h2 {
+            color: #111;
+        }
+        .form-container {
+            display: inline-block;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: left;
+            width: 300px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        input[type=text] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type=submit] {
+            background-color: #0078ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        input[type=submit]:hover {
+            background-color: #005fcc;
+        }
+        small {
+            color: #777;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>Prediksi Diabetes Menggunakan Random Forest</b></h2>
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <label>Jumlah Kehamilan</label>
+            <input type="text" name="Pregnancies" placeholder="Contoh: 2" required>
+            <small>Jumlah total kehamilan (0 jika belum pernah hamil)</small>
+
+            <label>Kadar Glukosa (mg/dL)</label>
+            <input type="text" name="Glucose" placeholder="Contoh: 120" required>
+            <small>Nilai kadar glukosa plasma (biasanya 70 - 200 mg/dL)</small>
+
+            <label>Tekanan Darah (mmHg)</label>
+            <input type="text" name="BloodPressure" placeholder="Contoh: 70" required>
+            <small>Tekanan darah diastolik (biasanya 60 - 90 mmHg)</small>
+
+            <label>Ketebalan Kulit (mm)</label>
+            <input type="text" name="SkinThickness" placeholder="Contoh: 25" required>
+            <small>Ketebalan lipatan kulit triceps (10 - 50 mm)</small>
+
+            <label>Kadar Insulin (μU/mL)</label>
+            <input type="text" name="Insulin" placeholder="Contoh: 80" required>
+            <small>Kadar insulin dalam darah (biasanya 15 - 276 μU/mL)</small>
+
+            <label>Indeks Massa Tubuh (BMI)</label>
+            <input type="text" name="BMI" placeholder="Contoh: 28.5" required>
+            <small>BMI = berat badan (kg) / (tinggi badan (m))²</small>
+
+            <label>Fungsi Keturunan Diabetes</label>
+            <input type="text" name="DiabetesPedigreeFunction" placeholder="Contoh: 0.45" required>
+            <small>Nilai antara 0.0 - 2.5 menunjukkan riwayat keturunan</small>
+
+            <label>Usia (tahun)</label>
+            <input type="text" name="Age" placeholder="Contoh: 35" required>
+            <small>Usia pasien dalam tahun</small>
+
+            <input type="submit" value="Prediksi">
+        </form>
+    </div>
+</body>
+</html>

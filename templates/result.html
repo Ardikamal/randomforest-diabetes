@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Prediksi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            padding: 50px;
+        }
+        .result-box {
+            display: inline-block;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #333;
+        }
+        .positive {
+            color: red;
+            font-weight: bold;
+        }
+        .negative {
+            color: green;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #0078ff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Hasil Prediksi</h2>
+        {% if result == 'Positif Diabetes' %}
+            <h3 class="positive">Hasil: {{ result }}</h3>
+            <p>Model mendeteksi kemungkinan Anda menderita diabetes. Disarankan untuk konsultasi medis lebih lanjut.</p>
+        {% elif result == 'Negatif Diabetes' %}
+            <h3 class="negative">Hasil: {{ result }}</h3>
+            <p>Tidak terdeteksi gejala diabetes berdasarkan parameter yang dimasukkan.</p>
+        {% else %}
+            <h3>{{ result }}</h3>
+        {% endif %}
+        <a href="/">🔙 Kembali ke Halaman Utama</a>
+    </div>
+</body>
+</html>
